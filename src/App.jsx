@@ -1,7 +1,8 @@
-import Banner from './Banner'
-import Cart from './Cart'
-import ShoppingList from './ShoppingList'
-import mjlogo from '../assets/mjlogo.png'
+import Banner from './components/Banner'
+import Cart from './components/Cart'
+import ShoppingList from './components/ShoppingList'
+import mjlogo from './assets/mjlogo.png'
+import Footer from './components/Footer'
 
 const App = () => {
     return (
@@ -12,6 +13,7 @@ const App = () => {
             </Banner>
             {/* <Cart /> */}
             <ShoppingList />
+            <Footer />
         </div>
     )
 }

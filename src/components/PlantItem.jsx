@@ -13,7 +13,7 @@ import "../styles/PlantItem.css"
 const PlantItem = ({ id, cover, name, light, water }) => {
 
   return (
-    <li key={id} className="lmj-plant-item">
+    <li key={id} className="lmj-plant-item" onClick={handleClick}>
       <img className="lmj-plant-item-cover" src={cover}  alt="nom" />
       {name}
       <div>
@@ -22,6 +22,10 @@ const PlantItem = ({ id, cover, name, light, water }) => {
       </div>
     </li>
   )
+}
+
+const handleClick = (e) => {
+console.log(`Voici mon event:`, e)
 }
 
 export default PlantItem
