@@ -1,17 +1,7 @@
-import "../styles/Banner.css"
-import mjlogo from "../assets/mjlogo.png"
+import '../styles/Banner.css'
 
-const Banner = () => {
-  const title = "La Maison Jungle"
-  return (
-    <div className="banner">
-      <img src={mjlogo}
-        alt="Logo de La Maison Jungle : dessin de feuille"
-        className="banner-logo"
-      />
-      <h1 className="banner-title">{title}</h1>
-    </div>
-  )
+const Banner = ({children}) => {
+    return <div className='lmj-banner'>{children}</div>
 }
 
 export default Banner
