@@ -8,20 +8,20 @@ const quantityLabel = {
   3: "beaucoup"
 }
 
-const CareScale = ({ scaleValue, careType }) => {
+const CareScale = ({ value, type }) => {
 	const range = [1, 2, 3]
-	const scaleType = careType === 'light' ? sun : water
+	const icon = type === 'light' ? sun : water
 
 	return (
 		<div onClick={() => {
       alert(
-        `Cette plante requiert ${quantityLabel[scaleValue]} ${careType === "light" ? "de lumière" : "d'eau"}`
+        `Cette plante requiert ${quantityLabel[value]} ${type === "light" ? "de lumière" : "d'eau"}`
       )
     }}>
 			{range.map((rangeElem) =>
-				scaleValue >= rangeElem ? (
+				value >= rangeElem ? (
 					<span key={rangeElem.toString()}>
-            <img src={scaleType} alt={careType} />
+            <img src={icon} alt={type} />
             </span>
 				) : null
 			)}

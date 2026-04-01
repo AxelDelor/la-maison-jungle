@@ -10,22 +10,24 @@ import CareScale from "./CareScale"
 import "../styles/PlantItem.css"
 
 
-const PlantItem = ({ id, cover, name, light, water }) => {
+const PlantItem = ({ cover, name, light, water }) => {
+
+  const handleClick = (plantName) => {
+    alert(`Vous voulez acheter 1 ${plantName}? Très bon choix 🌱✨`)
+  }
 
   return (
-    <li key={id} className="lmj-plant-item" onClick={handleClick}>
-      <img className="lmj-plant-item-cover" src={cover}  alt="nom" />
+    <li className="lmj-plant-item" onClick={handleClick}>
+      <img className="lmj-plant-item-cover" src={cover} alt={`${name} cover`} />
       {name}
       <div>
-        <CareScale careType="water" scaleValue={water} />
-        <CareScale careType="light" scaleValue={light} />
+        <CareScale type="water" value={water} />
+        <CareScale type="light" value={light} />
       </div>
     </li>
   )
 }
 
-const handleClick = (e) => {
-console.log(`Voici mon event:`, e)
-}
+
 
 export default PlantItem
