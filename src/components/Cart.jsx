@@ -1,5 +1,5 @@
 import "../styles/Cart.css"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 
 const Cart = ({ cart, updateCart }) => {
@@ -9,10 +9,15 @@ const Cart = ({ cart, updateCart }) => {
     (acc, plantType) => acc + plantType.amount * plantType.price,
     0
   )
+  useEffect(() => {
+    document.title = `LMJ: ${total}€ d'achats`
+  }, [total])
+
 
   return isOpen ? (
     <div className="lmj-cart">
-      <button className="lmj-cart-toggle-button" onClick={() => setIsOpen(false)}>
+      <button className="lmj-cart-toggle-button"
+        onClick={() => setIsOpen(false)}>
         Fermer le panier
       </button>
       {cart.length > 0 ? (
@@ -33,12 +38,12 @@ const Cart = ({ cart, updateCart }) => {
       )}
     </div >
   ) : (
-  <div className="lmj-cart closed">
-    <button className="lmj-cart-toggle-button" onClick={() => setIsOpen(true)}>
-      Ouvrir le panier
-    </button>
-  </div>
-)
+    <div className="lmj-cart closed">
+      <button className="lmj-cart-toggle-button" onClick={() => setIsOpen(true)}>
+        Ouvrir le panier
+      </button>
+    </div>
+  )
 };
 
 export default Cart
