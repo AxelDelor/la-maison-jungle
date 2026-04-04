@@ -12,12 +12,12 @@ import "../styles/PlantItem.css"
 
 const PlantItem = ({ cover, name, light, water }) => {
 
-  const handleClick = (plantName) => {
-    alert(`Vous voulez acheter 1 ${plantName}? Très bon choix 🌱✨`)
-  }
+  // const handleClick = (plantName) => {
+  //   alert(`Vous voulez acheter 1 ${plantName}? Très bon choix 🌱✨`)
+  // }
 
   return (
-    <li className="lmj-plant-item" onClick={handleClick}>
+    <li className="lmj-plant-item" >
       <img className="lmj-plant-item-cover" src={cover} alt={`${name} cover`} />
       {name}
       <div>
